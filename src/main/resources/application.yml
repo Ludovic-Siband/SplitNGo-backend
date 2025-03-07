@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: SplitNGo-backend
+  docker:
+    compose:
+      enabled: false
