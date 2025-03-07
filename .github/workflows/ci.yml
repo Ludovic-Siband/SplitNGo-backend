@@ -36,5 +36,6 @@ jobs:
       - name: Run static analysis (SpotBugs)
         run: mvn spotbugs:check
 
-      - name: Verify Dockerfile
-        run: docker build -t bff-app .
+#TODO: Add Dockerfile verification after Docker feature is added to the project
+#      - name: Verify Dockerfile
+#        run: docker build -t bff-app .
