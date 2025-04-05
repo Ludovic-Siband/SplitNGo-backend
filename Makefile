@@ -1,24 +1,30 @@
-# Lancer l'app en mode dev (par défaut)
+.PHONY: dev prod build clean down nuke rebuild
+
+# Launch the app in development mode (default)
 dev:
 	docker compose up
 
-# Lancer l'app en mode production (jar dans conteneur)
+# Launch the app in production mode (JAR inside container)
 prod:
 	BUILD_MODE=prod docker compose up
 
-# Compiler l'application sans tests
+# Build the application without running tests
 build:
 	./mvnw clean package -DskipTests
 
-# Nettoyer le projet Maven
+# Clean the Maven project
 clean:
 	./mvnw clean
 
-# Supprimer les conteneurs, images et volumes
+# Stop the containers
+down:
+	docker-compose down
+
+# Remove containers, images, and volumes
 nuke:
 	docker compose down -v --remove-orphans
 
-# Relancer tout (utile si t’as fait des modifs de deps ou Dockerfile)
+# Rebuild everything (useful after dependency or Dockerfile changes)
 rebuild:
 	docker compose down -v --remove-orphans
 	BUILD_MODE=prod docker compose build
