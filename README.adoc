@@ -1,0 +1,116 @@
+= SplitNGo - Backend for Frontend (BFF)
+:toc:
+:toc-title: Table of Contents
+:icons: font
+
+This module is the _Backend For Frontend_ (BFF) of the SplitNGo application, a travel management app for friends, developed in Java 21 with Spring Boot 3.4.3.
+
+== ⚙️ Technologies
+
+- Java 21
+- Spring Boot 3.4.3
+- Maven Wrapper (`mvnw`)
+- Docker & Docker Compose
+- Spring Devtools
+
+== 🚀 Launch the project
+
+=== 🛠️ Development Mode (default)
+
+The development mode uses `spring-boot-devtools` to enable hot reload.
+
+[source,bash]
+----
+make dev
+----
+
+or directly:
+
+[source,bash]
+----
+docker compose up
+----
+
+=== 🚢 Production Mode
+
+[source,bash]
+----
+make prod
+----
+
+or:
+
+[source,bash]
+----
+BUILD_MODE=prod docker compose up
+----
+
+== 🧪 Manual Compilation
+
+=== Build the application (without tests)
+
+[source,bash]
+----
+make build
+----
+
+=== Clean the project
+
+[source,bash]
+----
+make clean
+----
+
+== ⏹️ Properly stop the application
+
+To stop running containers:
+
+[source,bash]
+----
+docker compose down
+----
+
+== 🧹 Maintenance
+
+[WARNING]
+=== ⚠️ Delete containers, volumes and images ⚠️
+====
+This command **removes the containers**, **volumes**, and **associated Docker resources**.
+
+Use it **only if you want to reset everything**, for example after critical changes in volumes or a corrupted database.
+
+It will also delete **persisted data** (if volumes are used).
+
+[source,bash]
+----
+make nuke
+----
+====
+
+=== Fully rebuild the Docker image
+
+[source,bash]
+----
+make rebuild
+----
+
+== ⚙️ Spring Boot Configuration
+
+The `application-dev.yml` file contains settings specific to development mode.
+
+[source,yaml]
+----
+spring:
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+  logging:
+    level:
+      root: DEBUG
+----
+
+== 👥 Authors
+
+This project is developed as part of the CDA (Application Developer Designer) training by the SplitNGo team.
