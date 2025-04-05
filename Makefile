@@ -1,4 +1,4 @@
-.PHONY: dev prod build clean down nuke rebuild
+.PHONY: dev prod build clean down logs nuke rebuild
 
 # Launch the app in development mode (default)
 dev:
@@ -19,6 +19,9 @@ clean:
 # Stop the containers
 down:
 	docker-compose down
+
+logs:
+	docker-compose logs -f
 
 # Remove containers, images, and volumes
 nuke:
