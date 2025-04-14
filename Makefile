@@ -2,7 +2,7 @@
 
 # Launch the app in development mode (default)
 dev:
-	docker compose up
+	BUILD_MODE=dev docker compose up
 
 # Launch the app in production mode (JAR inside container)
 prod:
