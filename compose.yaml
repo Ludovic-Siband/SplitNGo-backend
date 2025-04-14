@@ -1,1 +1,19 @@
 services:
+  bff:
+    build:
+      context: .
+      target: ${BUILD_MODE:-dev}
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    command: >
+      sh -c "
+      if [ '${BUILD_MODE}' = 'prod' ]; then
+        java -jar app.jar
+      else
+        ./mvnw spring-boot:run
+      fi"
