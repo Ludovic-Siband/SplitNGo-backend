@@ -1,2 +1,15 @@
+# Normalize line endings for all text files
+* text=auto
+
+# Force LF for Unix shell scripts
 /mvnw text eol=lf
+*.sh text eol=lf
+
+# Force CRLF for Windows batch scripts
 *.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Prevent line ending conversions for binary files
+*.png binary
+*.jpg binary
+*.pdf binary
