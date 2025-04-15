@@ -1,6 +1,7 @@
 package com.splitngo.backend.controllers;
 
 import com.splitngo.backend.dtos.TripDTO;
+import com.splitngo.backend.dtos.TripDTODetail;
 import com.splitngo.backend.services.TripService;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,4 +21,13 @@ public class TripController {
     public List<TripDTO> getAllTrips(){
         return tripService.getAllTrips();
     }
+
+
+    @GetMapping("/{id}")
+    public TripDTODetail getTripById(@PathVariable int id) {
+        return tripService.getTripById(id);
+    }
+
+
+
 }
