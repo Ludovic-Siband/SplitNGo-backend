@@ -2,9 +2,8 @@ package com.splitngo.backend.services;
 
 import com.splitngo.backend.clients.TripClient;
 import com.splitngo.backend.dtos.TripDTO;
-import com.splitngo.backend.dtos.TripDTODetail;
+import com.splitngo.backend.dtos.TripDetailDTO;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class TripService {
      * @param id The ID of the trip to retrieve.
      * @return The TripDTO representing the requested trip.
      */
-    public TripDTODetail getTripById(int id) {
+    public TripDetailDTO getTripById(int id) {
         return tripClient.getTripByID(id);
     }
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class TripDTODetail {
+public class TripDetailDTO {
 
     // trip
     private int id;

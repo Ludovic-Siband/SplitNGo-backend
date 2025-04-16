@@ -1,7 +1,7 @@
 package com.splitngo.backend.clients;
 
 import com.splitngo.backend.dtos.TripDTO;
-import com.splitngo.backend.dtos.TripDTODetail;
+import com.splitngo.backend.dtos.TripDetailDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +15,6 @@ public interface TripClient {
     List<TripDTO> getAllTrips();
 
     @GetMapping("/api/trips/{id}")
-    TripDTODetail getTripByID(@PathVariable("id") int id);
+    TripDetailDTO getTripByID(@PathVariable("id") int id);
 
 }
