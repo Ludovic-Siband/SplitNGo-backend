@@ -15,3 +15,8 @@ feign:
         connectTimeout: 3000
         readTimeout: 3000
         loggerLevel: full
+
+app:
+  cors:
+    allowed-origins:
+      - http://trip-service:8081

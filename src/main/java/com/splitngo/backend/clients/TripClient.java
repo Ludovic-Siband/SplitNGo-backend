@@ -15,6 +15,6 @@ public interface TripClient {
     List<TripDTO> getAllTrips();
 
     @GetMapping("/api/trips/{id}")
-    TripDetailDTO getTripByID(@PathVariable("id") int id);
+    TripDetailDTO getTripByID(@PathVariable("id") Integer id);
 
 }

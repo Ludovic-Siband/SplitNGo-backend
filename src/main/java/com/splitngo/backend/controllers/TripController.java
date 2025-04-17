@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*") // or "http://localhost:3000" if you want to restrict
+// @CrossOrigin(origins = "*") // or "http://localhost:3000" if you want to restrict
 @RestController
 @RequestMapping("/bff/trips")
 public class TripController {
@@ -25,7 +25,7 @@ public class TripController {
 
 
     @GetMapping("/{id}")
-    public TripDetailDTO getTripById(@PathVariable int id) {
+    public TripDetailDTO getTripById(@PathVariable Integer id) {
         return tripService.getTripById(id);
     }
 

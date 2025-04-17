@@ -31,7 +31,7 @@ public class TripService {
      * @param id The ID of the trip to retrieve.
      * @return The TripDTO representing the requested trip.
      */
-    public TripDetailDTO getTripById(int id) {
+    public TripDetailDTO getTripById(Integer id) {
         return tripClient.getTripByID(id);
     }
 }

@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class TripDetailDTO {
 
     // trip
-    private int id;
+    private Integer id;
     private String title;
     private String description;
     private LocalDateTime dateStart;
@@ -17,14 +17,5 @@ public class TripDetailDTO {
     private String createdBy;
     private boolean isActive;
 
-    /*
-    // user_trip
-    private List<Object> members;
 
-    // activity
-    private List<Object> activities;
-
-     // expenses
-     private List<Object> expenses;
-    */
 }
