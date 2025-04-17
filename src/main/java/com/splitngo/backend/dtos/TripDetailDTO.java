@@ -5,8 +5,9 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class TripDTO {
+public class TripDetailDTO {
 
+    // trip
     private Integer id;
     private String title;
     private String description;
@@ -15,4 +16,6 @@ public class TripDTO {
     private LocalDateTime createdAt;
     private String createdBy;
     private boolean isActive;
+
+
 }
