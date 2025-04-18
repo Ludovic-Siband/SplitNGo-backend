@@ -1,18 +1,14 @@
 package com.splitngo.backend.dtos;
 
-import lombok.Data;
-
 import java.time.LocalDateTime;
 
-@Data
-public class TripDTO {
-
-    private Integer id;
-    private String title;
-    private String description;
-    private LocalDateTime dateStart;
-    private LocalDateTime dateEnd;
-    private LocalDateTime createdAt;
-    private String createdBy;
-    private boolean isActive;
+public record TripDTO(
+        Integer id,
+        String title,
+        String description,
+        LocalDateTime dateStart,
+        LocalDateTime dateEnd,
+        LocalDateTime createdAt,
+        UserDTO createdBy,
+        boolean isActive) {
 }
